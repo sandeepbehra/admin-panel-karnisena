@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography"; /* <-- Add this line to enable the prose classes */
+
+/* 
+  Tailwind v4 @theme block 
+  Defining colors here automatically generates classes like text-saffron, bg-karni-red, etc.
+*/
+@theme {
+  /* Typography - Mapped to your Next.js variables */
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-lora), ui-serif, Georgia, serif;
+
+  /* Short-hand Colors (Use these like: text-saffron, bg-red) */
+  --color-saffron: #fa9e19;
+  --color-red: #be1a22;
+
+  /* Full Karni Sena Brand Colors */
+  --color-karni-saffron: #fa9e19;
+  --color-karni-saffron-dark: #d98205;
+  --color-karni-deep-orange: #fb7d0a;
+  --color-karni-vivid: #fe6509;
+  --color-karni-pale: #fbd49a;
+  --color-karni-red: #be1a22;
+  --color-karni-gold: #c89e5e;
+
+  /* Professional Light Theme Defaults */
+  --color-background: #FBFBF9; /* Alabaster off-white */
+  --color-foreground: #2A2A2A; /* Deep charcoal (better than harsh black) */
+}
+
+:root {
+  --background: #FBFBF9;
+  --foreground: #2A2A2A;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global highlight color using the primary saffron */
+::selection {
+  background-color: var(--color-saffron);
+  color: #ffffff;
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}

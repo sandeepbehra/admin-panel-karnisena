@@ -14,7 +14,7 @@ export const apiRequest = async (endpoint, options = {}) => {
       headers: {
         "Content-Type": "application/json",
 
-        Authentication: token || "",
+        Authorization: token || "",
 
         sessionId: sessionId || "",
       },

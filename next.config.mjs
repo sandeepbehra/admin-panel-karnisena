@@ -19,6 +19,11 @@ const nextConfig = {
         hostname: "karni-sena.s3.ap-south-1.amazonaws.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "example.com",
+        pathname: "/**",
+      },
     ],
   },
 };

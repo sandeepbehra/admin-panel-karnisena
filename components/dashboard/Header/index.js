@@ -3,6 +3,7 @@
 import { Bell } from "lucide-react";
 
 import { useAuth } from "@/context/AuthContext";
+import Image from "next/image";
 
 export default function Header() {
   const { user } = useAuth();
@@ -26,16 +27,17 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           {user?.profilePhotoUrl ? (
-            <img
-              src={
-                user.profilePhotoUrl
-              }
-              alt={
-                user?.fullName ||
-                "Admin"
-              }
-              className="h-10 w-10 rounded-full object-cover"
-            />
+           
+            <Image src={user.profilePhotoUrl} alt={
+                 user?.fullName ||
+                 "Admin"
+               }
+               width={10}
+               height={10}
+               className="object-fill h-10 w-10 rounded-full"
+               >
+
+            </Image>
           ) : (
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-karni-saffron font-semibold text-white">
               {user?.fullName
